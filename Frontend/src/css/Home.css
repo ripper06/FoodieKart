@@ -1,0 +1,179 @@
+/* ─────────────────────────────────────────
+   FoodieKart — index.css
+   Save this file and import it in main.jsx
+   import "./index.css"
+   ───────────────────────────────────────── */
+
+/* 1. RESET — removes browser default spacing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. BASE — sets font and background for whole page */
+body {
+  font-family: 'Georgia', serif;
+  background: #fffdf8;
+  color: #2c2416;
+}
+
+/* ── NAVBAR ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e8dfc8;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c2416;
+}
+
+.logo em {
+  color: #c0522a;       /* orange-red accent */
+  font-style: italic;
+}
+
+nav button {
+  background: #c0522a;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;  /* pill shape */
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ── HERO SECTION ── */
+.hero {
+  text-align: center;
+  padding: 3.5rem 2rem 2rem;
+  background: #fffdf8;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem); /* clamp = responsive font size */
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.7rem;
+  color: #1a1208;
+}
+
+.hero h1 em {
+  color: #c0522a;
+  font-style: italic;
+}
+
+.hero p {
+  color: #7a6a54;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Search bar */
+.hero input {
+  width: 100%;
+  max-width: 480px;
+  padding: 0.75rem 1.2rem;
+  border: 1.5px solid #d8cdb4;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  color: #2c2416;
+  outline: none;
+}
+
+.hero input:focus {
+  border-color: #c0522a;   /* orange border when clicked */
+}
+
+/* ── RECIPE GRID ── */
+.grid {
+  display: grid;
+  /* auto-fill = as many columns as fit, min 230px each */
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+/* ── RECIPE CARD ── */
+.card {
+  background: #fff;
+  border: 1px solid #e8dfc8;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s;   /* smooth hover animation */
+}
+
+.card:hover {
+  transform: translateY(-4px);  /* lifts up on hover */
+  border-color: #c0522a;
+}
+
+/* Big emoji area at top of card */
+.card-img {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: #fdf5e8;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+/* Cuisine tag pill (e.g. "Italian") */
+.tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #854F0B;
+  background: #FAEEDA;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+}
+
+.card-body h3 {
+  margin: 0.6rem 0 0.4rem;
+  font-size: 1rem;
+  color: #1a1208;
+}
+
+.card-body p {
+  font-size: 0.82rem;
+  color: #7a6a54;
+}
+
+/* Star rating color */
+.stars {
+  color: #c0522a;
+  letter-spacing: 1px;
+}
+
+/* "No results" message */
+.empty {
+  grid-column: 1 / -1;    /* stretches across all columns */
+  text-align: center;
+  color: #7a6a54;
+  padding: 2rem;
+  font-size: 0.95rem;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #e8dfc8;
+  font-size: 0.82rem;
+  color: #7a6a54;
+  margin-top: 1rem;
+}
