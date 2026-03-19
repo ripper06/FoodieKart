@@ -20,7 +20,9 @@ app.get('/', (req,res) => {
 
 app.use('/api',apiRoutes);
 
-const PORT = serverConfig.PORT;
-app.listen(PORT, () =>{
-    console.log('Server started on port : ' + PORT);
-});
+// const PORT = serverConfig.PORT;
+// app.listen(PORT, () =>{
+//     console.log('Server started on port : ' + PORT);
+// });
+
+module.exports = app;
