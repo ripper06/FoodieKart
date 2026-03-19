@@ -8,7 +8,15 @@ const app = express();
 ConnectDB();
 
 // middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://foodiekart-pyt6up19k-jayakrushna60850-gmailcoms-projects.vercel.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}))
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 
