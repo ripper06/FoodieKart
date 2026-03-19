@@ -14,11 +14,11 @@ const SearchBar = ({ onSearch }) => {
   };
 
   const handleSearch = () => {
-    onSearch(filters); // ✅ send data to parent
+    onSearch(filters);
   };
 
   return (
-    <div>
+    <div className="search-bar">
       <input
         type="text"
         name="search"

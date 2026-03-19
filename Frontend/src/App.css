@@ -1,6 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+/* App.css or index.css */
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main-content {
@@ -36,6 +49,13 @@ button {
   border: 1px solid #ccc;
   padding: 10px;
   cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .card img {

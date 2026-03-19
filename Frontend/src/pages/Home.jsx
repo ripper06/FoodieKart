@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../css/Home.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { getAllReviews } from "../utils/api";
 
 // Demo fallback data
 const DEMO_RECIPES = [
@@ -36,7 +37,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:4090/api/v1/reviews");
+        const { data } = await getAllReviews();
         setRealRecipes(data?.length > 0 ? data : []);
       } catch (error) {
         console.error("Failed to fetch reviews:", error);
