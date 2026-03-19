@@ -62,19 +62,25 @@ const Register = () => {
     
     return (
         <div>
-        <h1>Register</h1>
+        <h1 style={{color:"Grey", padding : "20px"}}>Register Yourself!</h1>
         
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{ maxWidth: "400px", margin: "0 auto" }}>
+            <label>Name : </label>
             <input name = "name" placeholder = "Name" onChange = {handleChange} required />
             <br />
+            <label>Email : </label>
             <input name="email" placeholder="Email" onChange = {handleChange} required />
             <br />
+            <label>Password : </label>
             <input name = "password" placeholder="Password" onChange ={handleChange} required />
             <br />
+            <label>Dietary Preferences : (Vegetarian, Vegan, etc.)</label>
             <input name="dietaryPreferences" placeholder="Diet (comma separated)" onChange={handleChange} />
             <br />
+            <label>Allergies : (Peanuts, Dairy, etc.)</label>
             <input name="allergies" placeholder="Allergies (comma separated)" onChange={handleChange} />
             <br />
+            <label>Disliked Ingredients : </label>
             <input name="dislikedIngredients" placeholder="Disliked Ingredients" onChange={handleChange} />
             <br />
 
@@ -86,6 +92,7 @@ const Register = () => {
             <br />
             <button type="submit">Register</button>
         </form>
+        <p style={{padding : "15px"}}>Already have an account? <button onClick={()=>navigate('/login')}>Login here</button></p>
         </div>
     )
 }

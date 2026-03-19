@@ -28,6 +28,7 @@ const ProfileDropdown = () => {
               <button
                 onClick={() => {
                   localStorage.removeItem("user");
+                  localStorage.removeItem("token");
                   window.location.reload();
                 }}
               >

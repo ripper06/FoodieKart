@@ -24,3 +24,20 @@ button {
   padding: 10px;
   cursor: pointer;
 }
+
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+}

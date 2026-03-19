@@ -1,7 +1,9 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+const { serverConfig } = require("../config");
 
 const protect = async (req, res, next) => {
+    //console.log(req.headers.authorization);
   try {
     let token;
 
@@ -13,7 +15,7 @@ const protect = async (req, res, next) => {
       token = req.headers.authorization.split(" ")[1];
 
       // 2. Verify token
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const decoded = jwt.verify(token, serverConfig.JWT_SECRET);
 
       // 3. Get user (without password)
       const user = await User.findById(decoded.id).select("-password");

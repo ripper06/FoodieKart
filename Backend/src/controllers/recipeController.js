@@ -25,22 +25,22 @@ const getRecipes = async (req, res) => {
     );
 
     // // 🔥 STEP 3: CREATE CACHE KEY
-    // const cacheKey = createCacheKey(params);
+    const cacheKey = createCacheKey(params);
 
     // // 🔥 STEP 4: CHECK CACHE
-    // const cachedData = getCache(cacheKey);
-    // if (cachedData) {
-    //   console.log("✅ CACHE HIT:", cacheKey);
-    //   return res.status(200).json(cachedData);
-    // }
+    const cachedData = getCache(cacheKey);
+    if (cachedData) {
+      console.log("✅ CACHE HIT:", cacheKey);
+      return res.status(200).json(cachedData);
+    }
 
-    // console.log("❌ CACHE MISS → API CALL:", cacheKey);
+    console.log("❌ CACHE MISS → API CALL:", cacheKey);
 
     // 🔥 STEP 5: CALL SPOONACULAR
     const recipes = await fetchRecipesFromAPI(params);
 
     // 🔥 STEP 6: STORE IN CACHE
-    // setCache(cacheKey, recipes);
+    setCache(cacheKey, recipes);
 
     if(recipes)return res.status(200).json(recipes);
 
