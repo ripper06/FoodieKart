@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import {loginUser} from "../utils/api";
 const Login = () => {
   const navigate = useNavigate();
 
@@ -23,7 +23,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4090/api/v1/auth/login", form);
+      const res = await loginUser(form);
+      // axios.post("http://localhost:4090/api/v1/auth/login", form);
 
       if (res.data) localStorage.setItem("user", JSON.stringify(res.data));
       else throw new Error("Invalid response from server");

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import {registerUser} from "../utils/api";
 
 const Register = () => {
 
@@ -46,7 +47,8 @@ const Register = () => {
                     .filter(item => item !== ""),
             };
             console.log(paylod);
-            const res = await axios.post("http://localhost:4090/api/v1/auth/register", paylod);
+            const res = await registerUser(paylod);
+            //axios.post("http://localhost:4090/api/v1/auth/register", paylod);
             // console.log(JSON.stringify(res.data));
 
             if(res.data)localStorage.setItem("user", JSON.stringify(res.data));
