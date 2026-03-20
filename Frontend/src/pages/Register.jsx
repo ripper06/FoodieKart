@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {registerUser} from "../utils/api";
-
+import "../css/Register.css"
 const Register = () => {
 
     const navigate = useNavigate();
